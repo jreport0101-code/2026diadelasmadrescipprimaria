@@ -113,7 +113,9 @@ display:flex;
 
 width:max-content;
 
-animation:scroll 120s linear infinite;
+animation:scroll 45s linear infinite;
+
+will-change:transform;
 }
 
 /* IMAGENES */
@@ -134,6 +136,8 @@ box-shadow:
 0px 0px 20px rgba(0,0,0,0.25);
 
 transition:0.4s;
+
+flex-shrink:0;
 }
 
 .slider img:hover{
@@ -405,9 +409,11 @@ flor.style.opacity=Math.random();
 document.body.appendChild(flor);
 }
 
-/* IMAGENES AUTOMATICAS */
+/* IMAGENES */
 
 const slider=document.getElementById("slider");
+
+/* PRIMERA PASADA */
 
 for(let i=1;i<=100;i++){
 
@@ -421,6 +427,22 @@ this.remove();
 };
 
 slider.appendChild(img);
+}
+
+/* DUPLICADO PARA LOOP PERFECTO */
+
+for(let i=1;i<=100;i++){
+
+let img2=document.createElement("img");
+
+img2.src=`foto${i}.jpeg`;
+
+img2.onerror=function(){
+
+this.remove();
+};
+
+slider.appendChild(img2);
 }
 
 </script>
