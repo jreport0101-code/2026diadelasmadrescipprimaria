@@ -11,230 +11,228 @@
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
 
-    background:linear-gradient(to bottom,#fff0f6,#ffe4ec);
+background:linear-gradient(to bottom,#fff0f6,#ffe4ec);
 
-    font-family:Arial, Helvetica, sans-serif;
+font-family:Arial, Helvetica, sans-serif;
 
-    overflow-x:hidden;
+overflow-x:hidden;
 }
 
-/* ENCABEZADO */
+/* TITULO */
 
 header{
 
-    background:linear-gradient(90deg,#ff4fa3,#ff79c6);
+background:linear-gradient(90deg,#ff4fa3,#ff79c6);
 
-    color:white;
+color:white;
 
-    text-align:center;
+text-align:center;
 
-    padding:35px;
+padding:35px;
 
-    font-size:55px;
+font-size:55px;
 
-    font-weight:bold;
+font-weight:bold;
 
-    box-shadow:0px 5px 20px rgba(0,0,0,0.2);
+box-shadow:0px 5px 20px rgba(0,0,0,0.2);
 }
 
 /* SUBTITULO */
 
 .subtitulo{
 
-    text-align:center;
+text-align:center;
 
-    padding:20px;
+padding:20px;
 
-    font-size:26px;
+font-size:26px;
 
-    color:#555;
+color:#555;
+}
+
+/* BOTON MUSICA */
+
+.boton-musica{
+
+text-align:center;
+
+margin-top:20px;
+}
+
+.boton-musica button{
+
+background:#ff4fa3;
+
+color:white;
+
+border:none;
+
+padding:18px 35px;
+
+font-size:22px;
+
+border-radius:30px;
+
+cursor:pointer;
+
+box-shadow:0px 0px 20px rgba(0,0,0,0.3);
+
+transition:0.3s;
+}
+
+.boton-musica button:hover{
+
+transform:scale(1.05);
+
+background:#ff79c6;
 }
 
 /* GALERIA */
 
 .galeria{
 
-    width:100%;
+width:100%;
 
-    overflow:hidden;
+overflow:hidden;
 
-    margin-top:20px;
+margin-top:30px;
 }
 
 /* SLIDER */
 
 .slider{
 
-    display:flex;
+display:flex;
 
-    width:max-content;
+width:max-content;
 
-    animation:scroll 120s linear infinite;
+animation:scroll 120s linear infinite;
 }
 
 /* IMAGENES */
 
 .slider img{
 
-    width:320px;
+width:320px;
 
-    height:320px;
+height:320px;
 
-    object-fit:cover;
+object-fit:cover;
 
-    margin:15px;
+margin:15px;
 
-    border-radius:30px;
+border-radius:30px;
 
-    box-shadow:
-    0px 0px 20px rgba(0,0,0,0.25);
+box-shadow:
+0px 0px 20px rgba(0,0,0,0.25);
 
-    transition:0.4s;
+transition:0.4s;
 }
 
 .slider img:hover{
 
-    transform:scale(1.08);
+transform:scale(1.08);
 }
 
 /* ANIMACION */
 
 @keyframes scroll{
 
-    0%{
-        transform:translateX(0);
-    }
+0%{
+transform:translateX(0);
+}
 
-    100%{
-        transform:translateX(-50%);
-    }
+100%{
+transform:translateX(-50%);
+}
+
 }
 
 /* MENSAJE */
 
 .mensaje{
 
-    width:85%;
+width:85%;
 
-    margin:60px auto;
+margin:60px auto;
 
-    background:white;
+background:white;
 
-    border-radius:30px;
+border-radius:30px;
 
-    padding:50px;
+padding:50px;
 
-    text-align:center;
+text-align:center;
 
-    box-shadow:
-    0px 0px 25px rgba(0,0,0,0.15);
+box-shadow:
+0px 0px 25px rgba(0,0,0,0.15);
 }
 
 .mensaje h2{
 
-    color:#ff4fa3;
+color:#ff4fa3;
 
-    font-size:42px;
+font-size:42px;
 
-    margin-bottom:25px;
+margin-bottom:25px;
 }
 
 .mensaje p{
 
-    color:#444;
+color:#444;
 
-    font-size:24px;
+font-size:24px;
 
-    line-height:1.8;
+line-height:1.8;
 }
 
 /* FOOTER */
 
 footer{
 
-    text-align:center;
+text-align:center;
 
-    padding:50px;
+padding:50px;
 
-    font-size:38px;
+font-size:38px;
 
-    color:#ff4fa3;
+color:#ff4fa3;
 
-    font-weight:bold;
+font-weight:bold;
 }
 
 /* FLORES */
 
 .flor{
 
-    position:fixed;
+position:fixed;
 
-    top:-50px;
+top:-50px;
 
-    animation:caer linear infinite;
+animation:caer linear infinite;
 
-    z-index:999;
+z-index:999;
 }
 
 @keyframes caer{
 
-    0%{
+0%{
 
-        transform:translateY(-50px) rotate(0deg);
-    }
-
-    100%{
-
-        transform:translateY(120vh) rotate(360deg);
-    }
+transform:translateY(-50px) rotate(0deg);
 }
 
-/* BOTON MUSICA */
+100%{
 
-#playButton{
-
-    position:fixed;
-
-    top:20px;
-
-    right:20px;
-
-    z-index:9999;
+transform:translateY(120vh) rotate(360deg);
 }
 
-#playButton button{
-
-    background:#ff4fa3;
-
-    color:white;
-
-    border:none;
-
-    padding:15px 25px;
-
-    border-radius:20px;
-
-    font-size:18px;
-
-    cursor:pointer;
-
-    box-shadow:0 0 15px rgba(0,0,0,0.3);
-
-    transition:0.3s;
-}
-
-#playButton button:hover{
-
-    transform:scale(1.05);
-
-    background:#ff79c6;
 }
 
 /* RESPONSIVE */
@@ -243,43 +241,50 @@ footer{
 
 header{
 
-    font-size:34px;
+font-size:34px;
 
-    padding:25px;
+padding:25px;
 }
 
 .subtitulo{
 
-    font-size:20px;
+font-size:20px;
 }
 
 .slider img{
 
-    width:220px;
+width:220px;
 
-    height:220px;
+height:220px;
 }
 
 .mensaje{
 
-    width:92%;
+width:92%;
 
-    padding:30px;
+padding:30px;
 }
 
 .mensaje h2{
 
-    font-size:30px;
+font-size:30px;
 }
 
 .mensaje p{
 
-    font-size:20px;
+font-size:20px;
 }
 
 footer{
 
-    font-size:28px;
+font-size:28px;
+}
+
+.boton-musica button{
+
+font-size:18px;
+
+padding:15px 20px;
 }
 
 }
@@ -298,57 +303,6 @@ footer{
 
 </audio>
 
-<!-- BOTON MUSICA -->
-
-<div id="playButton">
-
-<button onclick="iniciarMusica()">
-
-🌸 Tocar música 🌸
-
-</button>
-
-</div>
-
-<script>
-
-/* INICIAR MUSICA */
-
-function iniciarMusica(){
-
-const audio=document.getElementById("musica");
-
-audio.volume=0.5;
-
-audio.play();
-
-document.getElementById("playButton").style.display="none";
-
-}
-
-/* FLORES */
-
-for(let i=0;i<25;i++){
-
-    let flor=document.createElement("div");
-
-    flor.innerHTML="🌸";
-
-    flor.classList.add("flor");
-
-    flor.style.left=Math.random()*100+"vw";
-
-    flor.style.fontSize=(Math.random()*25+15)+"px";
-
-    flor.style.animationDuration=(Math.random()*10+8)+"s";
-
-    flor.style.opacity=Math.random();
-
-    document.body.appendChild(flor);
-}
-
-</script>
-
 <!-- TITULO -->
 
 <header>
@@ -362,6 +316,18 @@ for(let i=0;i<25;i++){
 <div class="subtitulo">
 
 Un regalo hecho con mucho amor ❤️
+
+</div>
+
+<!-- BOTON -->
+
+<div class="boton-musica">
+
+<button onclick="iniciarMusica()">
+
+🎵 Escucha esta canción para ti mamá 🎵
+
+</button>
 
 </div>
 
@@ -406,22 +372,55 @@ Este pequeño detalle fue preparado con mucho amor para ustedes 🌸
 
 <script>
 
-/* CARGAR IMAGENES AUTOMATICAMENTE */
+/* MUSICA */
+
+function iniciarMusica(){
+
+const audio=document.getElementById("musica");
+
+audio.volume=0.5;
+
+audio.play();
+
+}
+
+/* FLORES */
+
+for(let i=0;i<25;i++){
+
+let flor=document.createElement("div");
+
+flor.innerHTML="🌸";
+
+flor.classList.add("flor");
+
+flor.style.left=Math.random()*100+"vw";
+
+flor.style.fontSize=(Math.random()*25+15)+"px";
+
+flor.style.animationDuration=(Math.random()*10+8)+"s";
+
+flor.style.opacity=Math.random();
+
+document.body.appendChild(flor);
+}
+
+/* IMAGENES AUTOMATICAS */
 
 const slider=document.getElementById("slider");
 
 for(let i=1;i<=100;i++){
 
-    let img=document.createElement("img");
+let img=document.createElement("img");
 
-    img.src=`foto${i}.jpeg`;
+img.src=`foto${i}.jpeg`;
 
-    img.onerror=function(){
+img.onerror=function(){
 
-        this.remove();
-    };
+this.remove();
+};
 
-    slider.appendChild(img);
+slider.appendChild(img);
 }
 
 </script>
