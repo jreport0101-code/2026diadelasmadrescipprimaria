@@ -11,184 +11,234 @@
 <style>
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 body{
 
-background:linear-gradient(to bottom,#fff0f6,#ffe4ec);
+    background:linear-gradient(to bottom,#fff0f6,#ffe4ec);
 
-font-family:Arial;
+    font-family:Arial, Helvetica, sans-serif;
 
-overflow-x:hidden;
+    overflow-x:hidden;
 }
+
+/* ENCABEZADO */
 
 header{
 
-background:#ec5fa8;
+    background:linear-gradient(90deg,#ff4fa3,#ff79c6);
 
-color:white;
+    color:white;
 
-text-align:center;
+    text-align:center;
 
-padding:35px;
+    padding:35px;
 
-font-size:50px;
+    font-size:55px;
 
-font-weight:bold;
+    font-weight:bold;
 
-box-shadow:0 0 20px rgba(0,0,0,0.2);
+    box-shadow:0px 5px 20px rgba(0,0,0,0.2);
 }
+
+/* SUBTITULO */
 
 .subtitulo{
 
-text-align:center;
+    text-align:center;
 
-padding:20px;
+    padding:20px;
 
-font-size:24px;
+    font-size:26px;
 
-color:#555;
+    color:#555;
 }
+
+/* GALERIA */
 
 .galeria{
 
-width:100%;
+    width:100%;
 
-overflow:hidden;
+    overflow:hidden;
 
-margin-top:20px;
+    margin-top:20px;
 }
+
+/* SLIDER */
 
 .slider{
 
-display:flex;
+    display:flex;
 
-width:max-content;
+    width:max-content;
 
-animation:scroll 120s linear infinite;
+    animation:scroll 120s linear infinite;
 }
+
+/* IMAGENES */
 
 .slider img{
 
-width:320px;
+    width:320px;
 
-height:320px;
+    height:320px;
 
-object-fit:cover;
+    object-fit:cover;
 
-margin:15px;
+    margin:15px;
 
-border-radius:25px;
+    border-radius:30px;
 
-box-shadow:0 0 15px rgba(0,0,0,0.25);
+    box-shadow:
+    0px 0px 20px rgba(0,0,0,0.25);
 
-transition:0.3s;
+    transition:0.4s;
 }
 
 .slider img:hover{
 
-transform:scale(1.05);
+    transform:scale(1.08);
 }
+
+/* ANIMACION */
 
 @keyframes scroll{
 
-0%{
-transform:translateX(0);
+    0%{
+        transform:translateX(0);
+    }
+
+    100%{
+        transform:translateX(-50%);
+    }
 }
 
-100%{
-transform:translateX(-50%);
-}
-
-}
+/* MENSAJE */
 
 .mensaje{
 
-width:85%;
+    width:85%;
 
-margin:50px auto;
+    margin:60px auto;
 
-background:white;
+    background:white;
 
-padding:50px;
+    border-radius:30px;
 
-border-radius:25px;
+    padding:50px;
 
-text-align:center;
+    text-align:center;
 
-box-shadow:0 0 20px rgba(0,0,0,0.15);
+    box-shadow:
+    0px 0px 25px rgba(0,0,0,0.15);
 }
 
 .mensaje h2{
 
-font-size:40px;
+    color:#ff4fa3;
 
-color:#ec5fa8;
+    font-size:42px;
 
-margin-bottom:20px;
+    margin-bottom:25px;
 }
 
 .mensaje p{
 
-font-size:24px;
+    color:#444;
 
-line-height:1.7;
+    font-size:24px;
 
-color:#444;
+    line-height:1.8;
 }
+
+/* FOOTER */
 
 footer{
 
-text-align:center;
+    text-align:center;
 
-padding:40px;
+    padding:50px;
 
-font-size:35px;
+    font-size:38px;
 
-font-weight:bold;
+    color:#ff4fa3;
 
-color:#ec5fa8;
+    font-weight:bold;
 }
+
+/* FLORES */
 
 .flor{
 
-position:fixed;
+    position:fixed;
 
-top:-50px;
+    top:-50px;
 
-animation:caer linear infinite;
+    animation:caer linear infinite;
 
-z-index:999;
+    z-index:999;
 }
 
 @keyframes caer{
 
-0%{
+    0%{
 
-transform:translateY(-50px) rotate(0deg);
+        transform:translateY(-50px) rotate(0deg);
+    }
+
+    100%{
+
+        transform:translateY(120vh) rotate(360deg);
+    }
 }
 
-100%{
-
-transform:translateY(120vh) rotate(360deg);
-}
-
-}
+/* RESPONSIVE */
 
 @media(max-width:700px){
 
 header{
 
-font-size:34px;
+    font-size:34px;
+
+    padding:25px;
+}
+
+.subtitulo{
+
+    font-size:20px;
 }
 
 .slider img{
 
-width:220px;
-height:220px;
+    width:220px;
+
+    height:220px;
+}
+
+.mensaje{
+
+    width:92%;
+
+    padding:30px;
+}
+
+.mensaje h2{
+
+    font-size:30px;
+}
+
+.mensaje p{
+
+    font-size:20px;
+}
+
+footer{
+
+    font-size:28px;
 }
 
 }
@@ -199,9 +249,9 @@ height:220px;
 
 <body>
 
-<!-- AUDIO -->
+<!-- MUSICA -->
 
-<audio id="musica" loop>
+<audio id="musica" autoplay loop muted>
 
 <source src="musica.mp3" type="audio/mpeg">
 
@@ -209,34 +259,54 @@ height:220px;
 
 <script>
 
-/* ACTIVAR MUSICA */
+const audio = document.getElementById('musica');
 
-document.addEventListener('click', function(){
+audio.volume = 0.5;
 
-document.getElementById('musica').play();
+window.addEventListener('load', () => {
 
-}, { once:true });
+    audio.play().then(() => {
+
+        audio.muted = false;
+
+    }).catch(() => {
+
+        document.body.addEventListener('click', () => {
+
+            audio.muted = false;
+
+            audio.play();
+
+        }, { once:true });
+
+    });
+
+});
 
 /* FLORES */
 
 for(let i=0;i<25;i++){
 
-let flor=document.createElement("div");
+    let flor=document.createElement("div");
 
-flor.innerHTML="🌸";
+    flor.innerHTML="🌸";
 
-flor.classList.add("flor");
+    flor.classList.add("flor");
 
-flor.style.left=Math.random()*100+"vw";
+    flor.style.left=Math.random()*100+"vw";
 
-flor.style.fontSize=(Math.random()*25+15)+"px";
+    flor.style.fontSize=(Math.random()*25+15)+"px";
 
-flor.style.animationDuration=(Math.random()*10+8)+"s";
+    flor.style.animationDuration=(Math.random()*10+8)+"s";
 
-document.body.appendChild(flor);
+    flor.style.opacity=Math.random();
+
+    document.body.appendChild(flor);
 }
 
 </script>
+
+<!-- TITULO -->
 
 <header>
 
@@ -244,11 +314,15 @@ document.body.appendChild(flor);
 
 </header>
 
+<!-- SUBTITULO -->
+
 <div class="subtitulo">
 
 Un regalo hecho con mucho amor ❤️
 
 </div>
+
+<!-- GALERIA -->
 
 <div class="galeria">
 
@@ -257,6 +331,8 @@ Un regalo hecho con mucho amor ❤️
 </div>
 
 </div>
+
+<!-- MENSAJE -->
 
 <div class="mensaje">
 
@@ -268,12 +344,16 @@ Un regalo hecho con mucho amor ❤️
 
 <p>
 
-Gracias por todo su amor y dedicación.  
-Este pequeño detalle fue preparado con mucho cariño para ustedes 🌸
+Gracias por todo su amor, paciencia y dedicación.  
+Gracias por acompañar, enseñar y cuidar siempre con tanto cariño.  
+
+Este pequeño detalle fue preparado con mucho amor para ustedes 🌸
 
 </p>
 
 </div>
+
+<!-- FOOTER -->
 
 <footer>
 
@@ -283,42 +363,22 @@ Este pequeño detalle fue preparado con mucho cariño para ustedes 🌸
 
 <script>
 
-/* CARGAR MUCHAS IMAGENES AUTOMATICAMENTE */
+/* CARGAR IMAGENES AUTOMATICAMENTE */
 
 const slider=document.getElementById("slider");
 
-/* AJUSTA EL NUMERO MAXIMO */
-
 for(let i=1;i<=100;i++){
 
-let img=document.createElement("img");
+    let img=document.createElement("img");
 
-/* BUSCA foto1.jpeg foto2.jpeg etc */
+    img.src=`foto${i}.jpeg`;
 
-img.src=`foto${i}.jpeg`;
+    img.onerror=function(){
 
-img.onerror=function(){
+        this.remove();
+    };
 
-this.remove();
-
-};
-
-slider.appendChild(img);
-
-/* DUPLICAR PARA EFECTO INFINITO */
-
-let img2=document.createElement("img");
-
-img2.src=`foto${i}.jpeg`;
-
-img2.onerror=function(){
-
-this.remove();
-
-};
-
-slider.appendChild(img2);
-
+    slider.appendChild(img);
 }
 
 </script>
