@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>🌸 Feliz día Mamás de primaria 🌸</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+background:linear-gradient(to bottom,#fff0f6,#ffe4ec);
+
+font-family:Arial;
+
+overflow-x:hidden;
+}
+
+header{
+
+background:#ec5fa8;
+
+color:white;
+
+text-align:center;
+
+padding:35px;
+
+font-size:50px;
+
+font-weight:bold;
+
+box-shadow:0 0 20px rgba(0,0,0,0.2);
+}
+
+.subtitulo{
+
+text-align:center;
+
+padding:20px;
+
+font-size:24px;
+
+color:#555;
+}
+
+.galeria{
+
+width:100%;
+
+overflow:hidden;
+
+margin-top:20px;
+}
+
+.slider{
+
+display:flex;
+
+width:max-content;
+
+animation:scroll 120s linear infinite;
+}
+
+.slider img{
+
+width:320px;
+
+height:320px;
+
+object-fit:cover;
+
+margin:15px;
+
+border-radius:25px;
+
+box-shadow:0 0 15px rgba(0,0,0,0.25);
+
+transition:0.3s;
+}
+
+.slider img:hover{
+
+transform:scale(1.05);
+}
+
+@keyframes scroll{
+
+0%{
+transform:translateX(0);
+}
+
+100%{
+transform:translateX(-50%);
+}
+
+}
+
+.mensaje{
+
+width:85%;
+
+margin:50px auto;
+
+background:white;
+
+padding:50px;
+
+border-radius:25px;
+
+text-align:center;
+
+box-shadow:0 0 20px rgba(0,0,0,0.15);
+}
+
+.mensaje h2{
+
+font-size:40px;
+
+color:#ec5fa8;
+
+margin-bottom:20px;
+}
+
+.mensaje p{
+
+font-size:24px;
+
+line-height:1.7;
+
+color:#444;
+}
+
+footer{
+
+text-align:center;
+
+padding:40px;
+
+font-size:35px;
+
+font-weight:bold;
+
+color:#ec5fa8;
+}
+
+.flor{
+
+position:fixed;
+
+top:-50px;
+
+animation:caer linear infinite;
+
+z-index:999;
+}
+
+@keyframes caer{
+
+0%{
+
+transform:translateY(-50px) rotate(0deg);
+}
+
+100%{
+
+transform:translateY(120vh) rotate(360deg);
+}
+
+}
+
+@media(max-width:700px){
+
+header{
+
+font-size:34px;
+}
+
+.slider img{
+
+width:220px;
+height:220px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- AUDIO -->
+
+<audio id="musica" loop>
+
+<source src="musica.mp3" type="audio/mpeg">
+
+</audio>
+
+<script>
+
+/* ACTIVAR MUSICA */
+
+document.addEventListener('click', function(){
+
+document.getElementById('musica').play();
+
+}, { once:true });
+
+/* FLORES */
+
+for(let i=0;i<25;i++){
+
+let flor=document.createElement("div");
+
+flor.innerHTML="🌸";
+
+flor.classList.add("flor");
+
+flor.style.left=Math.random()*100+"vw";
+
+flor.style.fontSize=(Math.random()*25+15)+"px";
+
+flor.style.animationDuration=(Math.random()*10+8)+"s";
+
+document.body.appendChild(flor);
+}
+
+</script>
+
+<header>
+
+🌸 Feliz día Mamás de primaria 🌸
+
+</header>
+
+<div class="subtitulo">
+
+Un regalo hecho con mucho amor ❤️
+
+</div>
+
+<div class="galeria">
+
+<div class="slider" id="slider">
+
+</div>
+
+</div>
+
+<div class="mensaje">
+
+<h2>
+
+❤️ Gracias Mamás ❤️
+
+</h2>
+
+<p>
+
+Gracias por todo su amor y dedicación.  
+Este pequeño detalle fue preparado con mucho cariño para ustedes 🌸
+
+</p>
+
+</div>
+
+<footer>
+
+🌸 Feliz Día de las Madres 🌸
+
+</footer>
+
+<script>
+
+/* CARGAR MUCHAS IMAGENES AUTOMATICAMENTE */
+
+const slider=document.getElementById("slider");
+
+/* AJUSTA EL NUMERO MAXIMO */
+
+for(let i=1;i<=100;i++){
+
+let img=document.createElement("img");
+
+/* BUSCA foto1.jpeg foto2.jpeg etc */
+
+img.src=`foto${i}.jpeg`;
+
+img.onerror=function(){
+
+this.remove();
+
+};
+
+slider.appendChild(img);
+
+/* DUPLICAR PARA EFECTO INFINITO */
+
+let img2=document.createElement("img");
+
+img2.src=`foto${i}.jpeg`;
+
+img2.onerror=function(){
+
+this.remove();
+
+};
+
+slider.appendChild(img2);
+
+}
+
+</script>
+
+</body>
+
+</html>
