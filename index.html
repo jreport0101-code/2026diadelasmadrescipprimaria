@@ -18,7 +18,13 @@ box-sizing:border-box;
 
 body{
 
-background:linear-gradient(to bottom,#fff0f6,#ffe4ec);
+background:
+linear-gradient(
+to bottom,
+#fff0f6,
+#ffe4ec,
+#fff5fa
+);
 
 font-family:Arial, Helvetica, sans-serif;
 
@@ -68,7 +74,7 @@ margin-bottom:30px;
 
 .boton-musica button{
 
-background:#ff4fa3;
+background:linear-gradient(90deg,#ff4fa3,#ff79c6);
 
 color:white;
 
@@ -83,6 +89,13 @@ border-radius:30px;
 cursor:pointer;
 
 box-shadow:0 0 20px rgba(0,0,0,0.25);
+
+transition:0.3s;
+}
+
+.boton-musica button:hover{
+
+transform:scale(1.05);
 }
 
 /* COLLAGE */
@@ -108,7 +121,9 @@ box-shadow:0 0 15px rgba(0,0,0,0.2);
 
 transition:0.3s;
 
-animation:flotar 5s ease-in-out infinite;
+animation:flotar 7s ease-in-out infinite;
+
+break-inside:avoid;
 }
 
 .collage img:hover{
@@ -322,14 +337,16 @@ Un regalo hecho con mucho amor ❤️
 
 <h2>
 
-❤️ Gracias Mamás ❤️
+❤️ ¡ Gracias ! ❤️
 
 </h2>
 
 <p>
 
 Gracias por todo su amor, paciencia y dedicación.  
-Este pequeño detalle fue preparado con mucho cariño para ustedes 🌸
+Gracias por acompañar, enseñar y cuidar siempre con tanto cariño.  
+
+Este pequeño detalle fue preparado con mucho amor para ustedes 🌸
 
 </p>
 
@@ -375,7 +392,7 @@ flor.style.opacity=Math.random();
 document.body.appendChild(flor);
 }
 
-/* IMAGENES */
+/* IMAGENES AUTOMATICAS */
 
 const collage=document.getElementById("collage");
 
