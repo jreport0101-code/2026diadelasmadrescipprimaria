@@ -196,6 +196,47 @@ footer{
     }
 }
 
+/* BOTON MUSICA */
+
+#playButton{
+
+    position:fixed;
+
+    top:20px;
+
+    right:20px;
+
+    z-index:9999;
+}
+
+#playButton button{
+
+    background:#ff4fa3;
+
+    color:white;
+
+    border:none;
+
+    padding:15px 25px;
+
+    border-radius:20px;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    box-shadow:0 0 15px rgba(0,0,0,0.3);
+
+    transition:0.3s;
+}
+
+#playButton button:hover{
+
+    transform:scale(1.05);
+
+    background:#ff79c6;
+}
+
 /* RESPONSIVE */
 
 @media(max-width:700px){
@@ -249,39 +290,41 @@ footer{
 
 <body>
 
-<!-- MUSICA -->
+<!-- AUDIO -->
 
-<audio id="musica" autoplay loop muted>
+<audio id="musica" loop>
 
 <source src="musica.mp3" type="audio/mpeg">
 
 </audio>
 
+<!-- BOTON MUSICA -->
+
+<div id="playButton">
+
+<button onclick="iniciarMusica()">
+
+🌸 Tocar música 🌸
+
+</button>
+
+</div>
+
 <script>
 
-const audio = document.getElementById('musica');
+/* INICIAR MUSICA */
 
-audio.volume = 0.5;
+function iniciarMusica(){
 
-window.addEventListener('load', () => {
+const audio=document.getElementById("musica");
 
-    audio.play().then(() => {
+audio.volume=0.5;
 
-        audio.muted = false;
+audio.play();
 
-    }).catch(() => {
+document.getElementById("playButton").style.display="none";
 
-        document.body.addEventListener('click', () => {
-
-            audio.muted = false;
-
-            audio.play();
-
-        }, { once:true });
-
-    });
-
-});
+}
 
 /* FLORES */
 
